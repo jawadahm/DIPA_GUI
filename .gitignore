@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+src/main/resources/DIPA_GUI/.angular
+src/main/resources/DIPA_GUI/node_modules

@@ -1,0 +1,197 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4ff;
+  }
+  
+  .login-card {
+    width: 400px;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .logo {
+    width: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .or-divider {
+    margin: 1rem 0;
+    color: #888;
+    font-size: 0.9rem;
+  }
+  
+  mat-form-field.full-width {
+    width: 100%;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  
+  .forgot-password-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+  
+  .signup-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .signup-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.social-login {     display: flex;     justify-content: center;     margin-bottom: 1.5rem; margin-top: 1.5rem; }
+
+.social-button {     display: flex;     align-items: center;     justify-content: center;     width: 48%;     padding: 0.5rem 1rem;     border: 1px solid #ddd;
+  /* Light border */
+  border-radius: 3px;     color: #555;     font-weight: 500;     font-size: 0.9rem; text-transform: none; background-color: white; }
+
+  .google-button {     border-color: #db4437; /* Google red */color: #db4437; } .facebook-button {     border-color: #4267B2; /* Facebook blue */color: #4267B2; } .social-button:hover {     background-color: #f0f0f0; /* Light hover effect */ }
+ 
+  .social-button .icon {     width: 18px;     height: 18px;     margin-right: 8px; }
+   
+  .custom-rounded-form-field {
+    // This targets the outline border of the form field
+    .mat-form-field-appearance-outline {
+      .mat-form-field-outline {
+        border-radius: 20px;  // Adjust as needed
+        border-color: currentColor; // Ensure the color is consistent
+      }
+  
+      .mat-form-field-outline-start,
+      .mat-form-field-outline-end {
+        border-radius: 20px; // Apply rounding to the ends
+      }
+    }
+  
+    // Ensure the input field has the same rounded corners
+    input.mat-input-element {
+      border-radius: 20px; // Match the border radius
+      overflow: hidden; // Prevent overflow if needed
+    }
+  }
+
+  .or-border {
+    position: relative;
+    text-align: center;
+    color: #e0e0e0;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100px;
+      top: 50%;
+      height: 1px;
+      background: #e0e0e0;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 100px;
+      top: 50%;
+      height: 1px;
+      background: #e0e0e0;
+    }
+  }
+
+  .custom-row {
+    &.row {
+      margin-right: -8px;
+      margin-left: -8px;
+      .col-2,
+      .col-12 {
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+    }
+  }
+
+  .m-r-8 {
+    margin-right: 8px;
+  }
+
+  .m-t-30 {
+    margin-top: 30px !important;
+}
+
+.mat-subtitle-2,
+.mat-subtitle-1,
+.mat-headline-5,
+.mat-headline-6,
+.mat-subtitle-1,
+.mat-subtitle-2,
+.mat-body-1,
+.mat-body-2 {
+  color: #111c2d;
+  margin: 0;
+}
+
+.f-s-14 {
+  font-size: 14px !important;
+}
+
+.f-w-600 {
+  font-weight: 600 !important;
+}
+
+.m-b-12 {
+  margin-bottom: 12px !important;
+}
+
+.d-block {
+  display: block;
+}
+
+.left-align-label {
+  text-align: left; // Align text to the left
+  margin-bottom: 4px; // Adjust margin if needed
+}
+
+.left-align-error-label {
+  text-align: right; // Align text to the right
+  color: #fb977d; // Adjust margin if needed
+}
+
+  
+  
+  
+  
+  
+  
+ 

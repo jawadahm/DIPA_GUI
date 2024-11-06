@@ -1,0 +1,62 @@
+<div class="login-container">
+    <div class="login-card">
+
+      <div class="text-center">
+        <!-- <a [routerLink]="['/dashboards/dashboard1']" class="ng-star-inserted">
+            <img src="./assets/images/logos/dark-logo.svg" alt="logo" class="align-middle m-2">
+        </a> -->
+        <h2 style="color:#0085db;">Spike Login</h2>
+    </div>
+  
+      <!-- <div class="social-login">
+        <button mat-stroked-button color="primary" class="social-button google-button" (click)="login()">
+          <img src="assets/images/svgs/cognito.svg" alt="Identity Provider" class="icon" /> Single Sign On
+        </button>
+      </div> -->
+  
+      <div class="row m-t-24 custom-row">
+        <!-- Google Button -->
+        <div class="social-login">
+          <button mat-stroked-button class="w-100" aria-label="Sign in Identity Provider" (click)="login()">
+            <div class="d-flex align-items-center">
+              <img src="/assets/images/svgs/cognito.svg" alt="google" width="16" class="m-r-8">
+              Sign in with IDP
+            </div>
+          </button>
+        </div>
+      </div>
+      
+      <div class="or-border m-t-30">or sign in with</div>
+  
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="m-t-30">
+        <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block left-align-label">Username</mat-label>
+          <mat-form-field appearance="outline" class="custom-rounded-form-field full-width">
+            <input matInput formControlName="username" />
+            <mat-error *ngIf="f['username'].touched && f['username'].hasError('required')" class="left-align-error-label">
+              Username is required.
+            </mat-error>
+            <mat-error *ngIf="f['username'].hasError('minlength')" class="left-align-error-label">
+              Name should be at least 6 characters.
+            </mat-error>
+          </mat-form-field>
+  
+        <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block left-align-label">Password</mat-label>
+        <mat-form-field appearance="outline" class="full-width">
+          <input matInput type="password" formControlName="password" />
+          <mat-error *ngIf="f['password'].touched && f['password'].hasError('required')" class="left-align-error-label">
+            Password is required.
+          </mat-error>
+        </mat-form-field>
+  
+        <!-- <div class="options">
+          <mat-checkbox>Remember this Device</mat-checkbox>
+          <a routerLink="/forgot-password" class="forgot-password-link">Forgot Password?</a>
+        </div> -->
+  
+        <button mat-flat-button color="primary" class="submit-button" [disabled]="!form.valid">
+          Sign In
+        </button>
+      </form>
+    </div>
+  </div>
+  
