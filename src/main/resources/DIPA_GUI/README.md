@@ -1,3 +1,13 @@
+# Node 
+Install Node version 20.18.0
+
+# NMP version
+NPM Version 10.8.2
+
+# Angular version
+
+npm i @angular/cli@16.1.0
+
 # DIPAUIPOC
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
