@@ -12,7 +12,11 @@ npm i @angular/cli@16.1.0
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
-## Development server
+#Open Code in VSCode
+  Open src/main/resources/DIPA_GUI
+  open terminal in the same directory and run npm install
+
+# Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
