@@ -12,7 +12,7 @@ npm i @angular/cli@16.1.0
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
-#Open Code in VSCode
+# Open Code in VSCode
   Open src/main/resources/DIPA_GUI
   open terminal in the same directory and run npm install
 
