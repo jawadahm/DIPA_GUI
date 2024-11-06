@@ -41,40 +41,38 @@ export class AuthService {
 
     public async login() {
         const codeChallenge = await this.pkceService.generateRandomStringForCodeChallenge(this.pkceService.retrieveCodeVerifier() as string);
-
-        //const authorizationUrl = `https://dipa-spike.auth.eu-west-2.amazoncognito.com/oauth2/authorize?` +
         const authorizationUrl = `https://dipa-azuread.auth.eu-west-2.amazoncognito.com/oauth2/authorize?` +
             `response_type=code&` +
-            //`client_id=3uli03omcj24k151a0nk7g0s88&` +
             `client_id=2jpj40a051o5vqrflmapf0m89l&` +
             `redirect_uri=http://localhost:4200/callback&` +
             `code_challenge=${codeChallenge}&` +
             `code_challenge_method=S256&` +
-            `scope=email`;
+            `scope=email profile openid`;
 
         window.location.href = authorizationUrl; // Redirect to Cognito
     }
 
     public async doLogout(): Promise<void> {
         const clientId = '2jpj40a051o5vqrflmapf0m89l';
-         const cognitoDomain = 'https://dipa-azuread.auth.eu-west-2.amazoncognito.com';
-        const redirectUri2 = 'https://materialm-angular-stylish.netlify.app/authentication/boxed-login';
-        const redirectUri = 'http://localhost:4200'; // Change this to your post-logout URI
+    const cognitoDomain = 'https://dipa-azuread.auth.eu-west-2.amazoncognito.com';
+    const finalRedirectUri = 'https://6360-124-29-233-66.ngrok-free.app';//'https://materialm-angular-stylish.netlify.app/authentication/boxed-login'//'http://localhost:4200'; // Redirect URI after full logout flow
 
-        // Azure AD logout URL
-        const azureAdLogoutUrl = `https://login.microsoftonline.com/${this.tenantId}/oauth2/v2.0/logout?post_logout_redirect_uri=${encodeURIComponent(redirectUri)}`;
-        // URL to log out from AWS Cognito
-        const cognitoLogoutUrl = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(redirectUri)}`;
-        
-        console.log(cognitoLogoutUrl);
+    // Azure AD logout URL with post-logout redirect parameter
+    const azureAdLogoutUrl = `https://login.microsoftonline.com/${this.tenantId}/oauth2/v2.0/logout?post_logout_redirect_uri=${encodeURIComponent(finalRedirectUri)}`;
 
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('id_token');
-        localStorage.removeItem('refresh_token');
-        localStorage.removeItem('username');
+    // AWS Cognito logout URL that redirects to Azure AD logout URL
+    const cognitoLogoutUrl = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(azureAdLogoutUrl)}`;
 
-        // Redirect to Cognito logout, which should then redirect to Azure AD logout if set up accordingly
-        window.location.href = cognitoLogoutUrl;
+    console.log(cognitoLogoutUrl);
+
+    // Clear local storage session data
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('id_token');
+    localStorage.removeItem('refresh_token');
+    localStorage.removeItem('username');
+
+    // Redirect to the Cognito logout endpoint
+    window.location.href = cognitoLogoutUrl;
     }
 
     public async authenticateUser(username: string, password: string) {

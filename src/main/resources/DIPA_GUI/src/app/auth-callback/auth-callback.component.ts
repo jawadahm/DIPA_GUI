@@ -29,7 +29,6 @@ export class AuthCallbackComponent implements OnInit {
         body.set('grant_type', 'authorization_code');
         body.set('code', code);
         body.set('redirect_uri', 'http://localhost:4200/callback');
-        //body.set('client_id', '3uli03omcj24k151a0nk7g0s88');
         body.set('client_id', '2jpj40a051o5vqrflmapf0m89l');
         body.set('client_secret', 'aacjjr8bhuuum1mpg4udnv672ddqu72mdpn90dm0ff8v9qnteub');
         body.set('code_verifier', this.pkceService.retrieveCodeVerifier() as string);
@@ -53,7 +52,7 @@ export class AuthCallbackComponent implements OnInit {
             console.log('Token Response:', data);
             localStorage.setItem('access_token', data.access_token);
             localStorage.setItem('id_token', data.id_token);
-            localStorage.setItem('refresh_token', data.id_token);
+            localStorage.setItem('refresh_token', data.refresh_token);
             const username = this.getUsernameFromToken(data.access_token);
             localStorage.setItem("username", username as string);
 
