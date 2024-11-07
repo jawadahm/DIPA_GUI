@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit{
   constructor(private apiService: ApiService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    const getAllProductsUrl = `http://localhost:8080/api/v1/products`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
 

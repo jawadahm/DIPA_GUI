@@ -26,6 +26,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../services/auth.service'
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -50,6 +51,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, 
     private authService: AuthService 
   ) {
+
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(6)]],
       password: ['', Validators.required]

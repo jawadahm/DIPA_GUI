@@ -56,6 +56,14 @@
 	</dependencies>
 
 	<build>
+			<resources>
+				<resource>
+					<directory>src/main/resources</directory>
+					<excludes>
+						<exclude>DIPA_GUI/**</exclude>
+					</excludes>
+				</resource>
+			</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -69,6 +77,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			 <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-clean-plugin</artifactId>
+	            <version>3.2.0</version>  <!-- Or a later version -->
+        	</plugin>
 		</plugins>
 	</build>
 

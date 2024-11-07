@@ -6,7 +6,8 @@ import * as Cognito from 'aws-sdk/clients/cognitoidentityserviceprovider';
 import { CognitoIdentityServiceProvider } from 'aws-sdk';
 import * as CryptoJS from 'crypto-js';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -44,7 +45,8 @@ export class AuthService {
         const authorizationUrl = `https://dipa-azuread.auth.eu-west-2.amazoncognito.com/oauth2/authorize?` +
             `response_type=code&` +
             `client_id=2jpj40a051o5vqrflmapf0m89l&` +
-            `redirect_uri=http://localhost:4200/callback&` +
+            //`redirect_uri=http://localhost:4200/callback&` +
+            `redirect_uri=${environment.REDIRECT_URI}/callback&` +
             `code_challenge=${codeChallenge}&` +
             `code_challenge_method=S256&` +
             `scope=email profile openid`;

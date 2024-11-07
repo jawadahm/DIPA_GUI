@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PKCEService } from '../services/pkceservice.service';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
+import { environment } from '../../environments/environment';
 
 @Component({
     selector: 'app-auth-callback',
@@ -28,7 +29,7 @@ export class AuthCallbackComponent implements OnInit {
         const body = new URLSearchParams();
         body.set('grant_type', 'authorization_code');
         body.set('code', code);
-        body.set('redirect_uri', 'http://localhost:4200/callback');
+        body.set('redirect_uri', `${environment.REDIRECT_URI}/callback`)//'http://localhost:4200/callback');
         body.set('client_id', '2jpj40a051o5vqrflmapf0m89l');
         body.set('client_secret', 'aacjjr8bhuuum1mpg4udnv672ddqu72mdpn90dm0ff8v9qnteub');
         body.set('code_verifier', this.pkceService.retrieveCodeVerifier() as string);
